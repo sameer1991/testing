@@ -18,7 +18,7 @@ public class PRCount {
 
         String owner = "sameer1991";
         String repo = "testing";
-        String accessToken = "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"; // Replace with your GitHub access token
+        String accessToken = "*****"; // Replace with your GitHub access token
         int failed_merged[]= getMergedPullRequestCountForToday(owner,repo,accessToken);
         int mergedCount = failed_merged[0];
         int failedCount = failed_merged[1];
