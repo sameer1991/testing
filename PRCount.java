@@ -70,7 +70,7 @@ public class PRCount {
 
                         if (mergedDateString != null && !mergedDateString.equals("null")) {
                             String current_date = gmtDate.substring(0, 10);
-                            String merged_date = gmtDate.substring(0, 10);
+                            String merged_date = mergedDateString.substring(1, 11);
                             if((current_date.equals(merged_date))==true){
                                 merged_count++;
                             }
