@@ -1,4 +1,5 @@
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -13,11 +14,20 @@ import java.time.*;
 
 public class PRCount {
 
+
+
     public static void main(String[] args) {
+
         String owner = "sameer1991";
         String repo = "testing";
-        String accessToken = "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"; // Replace with your GitHub access token
-        
+        String accessToken = "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";
+        //String branch_name = "branch_dev";
+
+        /*String owner= "samdhawa";
+        String repo ="servicepack";
+        String branch_name = "release/650";
+        String accessToken = "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";*/
+
         int failed_merged[]= getMergedPullRequestCountForToday(owner,repo,accessToken);
         int mergedCount = failed_merged[0];
         int failedCount = failed_merged[1];
@@ -74,9 +84,10 @@ public class PRCount {
                                 if((current_date.equals(merged_date))==true){
                                     merged_count++;
                                 }
-                            }else{
-                                failed_count++;
                             }
+                        }
+                        else{
+                            failed_count++;
                         }
 
                     }
@@ -102,6 +113,8 @@ public class PRCount {
 
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
         }
         count[0]=merged_count;
         count[1]=failed_count;
