@@ -25,7 +25,7 @@ public class PR_final {
         String owner="CQ";
         String repo="servicepack";
         String branchName = "release/650";
-        String accessToken="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";
+        String accessToken="";
 
         int count[]= getMergedPullRequestCountForToday(owner,repo,branchName,accessToken);
         int mergedCount = count[0];
